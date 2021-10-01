@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-rs-consent-agreements',
   templateUrl: './rs-consent-agreements.component.html',
-  styleUrls: ['./rs-consent-agreements.component.scss']
+  styleUrls: ['./rs-consent-agreements.component.scss'],
 })
 export class RsConsentAgreementsComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-rs-weekly-progress-notes',
   templateUrl: './rs-weekly-progress-notes.component.html',
-  styleUrls: ['./rs-weekly-progress-notes.component.scss']
+  styleUrls: ['./rs-weekly-progress-notes.component.scss'],
 })
 export class RsWeeklyProgressNotesComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

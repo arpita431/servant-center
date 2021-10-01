@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CaseWorkerProfileComponent } from './case-worker-profile.component';
+
 
 describe('CaseWorkerProfileComponent', () => {
   let component: CaseWorkerProfileComponent;
@@ -8,9 +8,8 @@ describe('CaseWorkerProfileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CaseWorkerProfileComponent ]
-    })
-    .compileComponents();
+      declarations: [CaseWorkerProfileComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
