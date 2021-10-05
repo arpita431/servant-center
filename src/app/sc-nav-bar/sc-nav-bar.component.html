@@ -7,38 +7,18 @@
   />
   <span>MyServantCenter</span>
   <span class="spacer"></span>
-  <button
-    type="button"
-    aria-label="Toggle sidenav"
-    mat-icon-button
-    (click)="drawer.toggle()"
-    *ngIf="isHandset$ | async"
-  >
+  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+    *ngIf="isHandset$ | async">
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
-    [fixedTopGap]="64"
-  >
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false" [fixedTopGap]="64">
     <mat-nav-list *ngFor="let option of navOptions">
-      <a
-        mat-list-item
-        attr.href="{{ option.url }}"
-        attr.style="color: {{ option.color }};"
-      >
-        <img
-          attr.src="{{ option.icon }}"
-          aria-hidden="true"
-          attr.alt="{{ option.name + ' icon' }}"
-        />
-        &nbsp;{{ option.name | uppercase }}
+      <a mat-list-item attr.href="{{option.url}}" attr.style="color: {{option.color}};">
+        <img attr.src="{{option.icon}}" aria-hidden="true" attr.alt="{{option.name + ' icon'}}">
+        &nbsp;{{option.name | uppercase}}
       </a>
     </mat-nav-list>
   </mat-sidenav>

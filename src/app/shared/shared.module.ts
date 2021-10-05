@@ -75,10 +75,11 @@ const COMPONENTS = [
   FooterComponent,
   WelcomeHeaderComponent,
   KeysPipe,
+  ConsentDataComponent,
 ];
 
 @NgModule({
-  declarations: [...COMPONENTS, ConsentDataComponent, WelcomeHeaderComponent],
+  declarations: [...COMPONENTS],
   imports: [CommonModule, ...MODULES],
   exports: [...MODULES, ...COMPONENTS],
 })

@@ -1,5 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+
 import { MenuItem } from 'primeng/api';
+
 import { DataService } from './services/data.service';
 
 @Component({
@@ -12,9 +14,9 @@ export class CaseWorkerComponent implements OnInit {
   public msgCount!: number;
   public msgData: any;
   public userInfo: any;
-  public name: string;
-  public login: string;
-  public profilePic: string;
+  public name!: string;
+  public login!: string;
+  public profilePic!: string;
   @HostListener('window:resize')
   onWindowResize() {
     this.displayMenu = window.innerWidth > 768;
@@ -59,7 +61,7 @@ export class CaseWorkerComponent implements OnInit {
     },
   ];
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   toggleMenu(): void {
     this.displayMenu = !this.displayMenu;

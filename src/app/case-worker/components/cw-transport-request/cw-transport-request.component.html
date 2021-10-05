@@ -46,93 +46,41 @@
       <div class="p-col-12 p-md-6">
         <div class="p-fluid p-formgrid p-grid">
           <div class="p-field p-col-12">
-            <textarea
-              pInputTextarea
-              formControlName="reason"
-              [rows]="6"
-              class="address-text-area"
-              placeholder="Reason for request"
-            ></textarea>
+            <textarea pInputTextarea formControlName=reason [rows]="6" class="address-text-area"
+              placeholder="Reason for request"></textarea>
           </div>
           <div class="p-field p-col-12">
-            <input
-              type="text"
-              pInputText
-              formControlName="coordinator"
-              placeholder="Transport Co-ordinator"
-            />
+            <input type="text" pInputText formControlName=coordinator placeholder="Transport Co-ordinator">
           </div>
           <div class="p-field p-col-12">
-            <input
-              type="text"
-              pInputText
-              formControlName="nursingNotified"
-              placeholder="Nursing Notified"
-            />
+            <input type="text" pInputText formControlName=nursingNotified placeholder="Nursing Notified">
           </div>
         </div>
       </div>
       <div class="p-col-12 p-md-6">
         <div class="p-fluid p-formgrid p-grid">
           <div class="p-field p-col-12">
-            <input
-              type="text"
-              pInputText
-              formControlName="address"
-              placeholder="Address"
-            />
+            <input type="text" pInputText formControlName=address placeholder="Address">
           </div>
           <div class="p-field p-col-8 p-md-5">
-            <input
-              type="text"
-              pInputText
-              formControlName="city"
-              placeholder="City"
-            />
+            <input type="text" pInputText formControlName=city placeholder="City">
           </div>
           <div class="p-field p-col-4 p-md-3">
-            <p-dropdown
-              formControlName="state"
-              [options]="states"
-              placeholder="State"
-              optionLabel="name"
-            ></p-dropdown>
+            <p-dropdown formControlName="state" [options]="states" placeholder="State" optionLabel=name></p-dropdown>
           </div>
           <div class="p-field p-col-5 p-md-4">
-            <input
-              type="text"
-              pInputText
-              formControlName="zip"
-              placeholder="Zip"
-            />
+            <input type="text" pInputText formControlName=zip placeholder="Zip">
           </div>
           <div class="p-field p-col-7 p-md-8">
-            <p-calendar
-              formControlName="approvedDate"
-              [touchUI]="mobileMode"
-              [readonlyInput]="mobileMode"
-              [inline]="false"
-              [showIcon]="true"
-              placeholder="Date Approved"
-            ></p-calendar>
+            <p-calendar formControlName=approvedDate [touchUI]="mobileMode" [readonlyInput]="mobileMode" [inline]=false
+              [showIcon]=true placeholder="Date Approved"></p-calendar>
           </div>
           <div class="p-field p-col-12 p-md-5">
-            <input
-              type="text"
-              pInputText
-              formControlName="by"
-              placeholder="By"
-            />
+            <input type="text" pInputText formControlName=by placeholder="By">
           </div>
           <div class="p-field p-col-12 p-md-7">
-            <p-calendar
-              formControlName="date"
-              [touchUI]="mobileMode"
-              [readonlyInput]="mobileMode"
-              [inline]="false"
-              [showIcon]="true"
-              placeholder="Date"
-            ></p-calendar>
+            <p-calendar formControlName=date [touchUI]="mobileMode" [readonlyInput]="mobileMode" [inline]=false
+              [showIcon]=true placeholder="Date"></p-calendar>
           </div>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-
 import { SharedModule } from '../shared/shared.module';
 import { CaseWorkerRoutingModule } from './case-worker-routing.module';
 import { CaseWorkerComponent } from './case-worker.component';
