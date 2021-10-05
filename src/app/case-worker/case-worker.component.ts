@@ -59,6 +59,12 @@ export class CaseWorkerComponent implements OnInit {
       styleClass: 'menu-items--text menu-item--5',
       routerLink: ['/case-worker/profile'],
     },
+    {
+      label: 'LOGOUT',
+      icon: 'fas fa-sign-out-alt',
+      styleClass: 'menu-items--text menu-item--6',
+      routerLink: ['/case-worker/profile'],
+    },
   ];
 
   ngOnInit(): void { }
