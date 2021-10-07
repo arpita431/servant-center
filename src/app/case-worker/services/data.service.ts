@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
   constructor(private http: HttpClient) {}
-  getData() {
+  getName() {
     return this.http.get('./assets/mock/userData.json');
   }
   getMsgCount() {

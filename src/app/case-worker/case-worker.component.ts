@@ -28,7 +28,7 @@ export class CaseWorkerComponent implements OnInit {
       this.msgCount = this.msgData.msgs.length;
     this.items[1].label = `MESSAGES (${this.msgCount})+`;
     });
-    this.service.getData().subscribe((data) => {
+    this.service.getName().subscribe((data) => {
       this.userInfo = data;
       this.profilePic = this.userInfo.image;
       this.name = this.userInfo.name;
