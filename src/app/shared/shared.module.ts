@@ -73,7 +73,7 @@ const COMPONENTS = [
   ItemHeaderComponent,
   HeaderComponent,
   FooterComponent,
-  WelcomeHeaderComponent,
+ WelcomeHeaderComponent,
   KeysPipe,
   ConsentDataComponent,
 ];

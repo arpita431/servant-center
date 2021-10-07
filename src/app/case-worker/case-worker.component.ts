@@ -1,7 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-
 import { MenuItem } from 'primeng/api';
-
 import { DataService } from './services/data.service';
 
 @Component({
@@ -17,7 +15,7 @@ export class CaseWorkerComponent implements OnInit {
   public name!: string;
   public login!: string;
   public profilePic!: string;
-  items !:MenuItem[];
+  items!: MenuItem[];
   @HostListener('window:resize')
   onWindowResize() {
     this.displayMenu = window.innerWidth > 768;
@@ -26,8 +24,9 @@ export class CaseWorkerComponent implements OnInit {
    this.service.getMsgCount().subscribe((data) => {
       this.msgData = data;
       this.msgCount = this.msgData.msgs.length;
-    this.items[1].label = `MESSAGES (${this.msgCount})+`;
+      this.items[1].label = `MESSAGES (${this.msgCount})+`;
     });
+
     this.service.getName().subscribe((data) => {
       this.userInfo = data;
       this.profilePic = this.userInfo.image;
@@ -63,12 +62,12 @@ export class CaseWorkerComponent implements OnInit {
         label: 'LOGOUT',
         icon: 'fas fa-sign-out-alt',
         styleClass: 'menu-items--text menu-item--6',
-        routerLink: ['/case-worker/profile'],
+        routerLink: ['/case-worker/dashboard'],
       },
     ];
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   toggleMenu(): void {
     this.displayMenu = !this.displayMenu;

@@ -2,14 +2,16 @@ import { Component, OnInit } from '@angular/core';
 
 import { CalendarOptions } from '@fullcalendar/angular';
 
-import { DataService } from '../../services/data.service';
-
 @Component({
   selector: 'app-case-worker-dashboard',
   templateUrl: './case-worker-dashboard.component.html',
   styleUrls: ['./case-worker-dashboard.component.scss'],
 })
 export class CaseWorkerDashboardComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {}
+
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
     headerToolbar: {
@@ -19,7 +21,5 @@ export class CaseWorkerDashboardComponent implements OnInit {
     },
     nowIndicator: true,
   };
-  constructor() {}
 
-  ngOnInit(): void {}
 }
