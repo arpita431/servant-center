@@ -1,44 +1,20 @@
-<app-item-header
-  color="blue"
-  title="TRANSPORTATION REQUEST FORM"
-></app-item-header>
+<app-item-header color="blue" title="TRANSPORTATION REQUEST FORM"></app-item-header>
 <div class="form-container">
   <form [formGroup]="transportRequestForm">
     <div class="p-fluid p-formgrid p-grid">
       <div class="p-field p-col-12 p-md-3">
-        <input
-          type="text"
-          pInputText
-          formControlName="firstName"
-          placeholder="Resident's First Name"
-        />
+        <input type="text" pInputText formControlName=firstName placeholder="Resident's First Name">
       </div>
       <div class="p-field p-col-12 p-md-3">
-        <input
-          type="text"
-          pInputText
-          formControlName="lastName"
-          placeholder="Resident's Last Name"
-        />
+        <input type="text" pInputText formControlName=lastName placeholder="Resident's Last Name">
       </div>
       <div class="p-field p-col-12 p-md-4">
-        <p-calendar
-          formControlName="appointmentDate"
-          [touchUI]="mobileMode"
-          [readonlyInput]="mobileMode"
-          [inline]="false"
-          [showIcon]="true"
-          placeholder="Appointment Date (mm/dd/yyyy)"
-        ></p-calendar>
+        <p-calendar formControlName=appointmentDate [touchUI]="mobileMode" [readonlyInput]="mobileMode" [inline]=false
+          [showIcon]=true placeholder="Appointment Date (mm/dd/yyyy)"></p-calendar>
       </div>
       <div class="p-field p-col-12 p-md-2">
-        <p-calendar
-          formControlName="time"
-          [timeOnly]="true"
-          placeholder="Time"
-          [showIcon]="true"
-          icon="pi pi-angle-down"
-        ></p-calendar>
+        <p-calendar formControlName=time [timeOnly]=true placeholder="Time" [showIcon]=true icon="pi pi-angle-down">
+        </p-calendar>
       </div>
     </div>
     <p-divider></p-divider>
@@ -85,17 +61,7 @@
         </div>
       </div>
     </div>
-    <button
-      type="submit"
-      pButton
-      label="Submit"
-      class="p-button-outlined"
-    ></button>
-    <button
-      type="button"
-      pButton
-      label="Cancel"
-      class="p-button-text p-button-secondary"
-    ></button>
+    <button type="submit" pButton label="Submit" class="p-button-outlined"></button>
+    <button type="button" pButton label="Cancel" class="p-button-text p-button-secondary"></button>
   </form>
 </div>
