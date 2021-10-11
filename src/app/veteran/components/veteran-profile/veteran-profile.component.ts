@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { email, RxwebValidators } from '@rxweb/reactive-form-validators';
 import { VeteranprofileService } from '../../services/veteranprofile.service';
 
 interface State {
@@ -20,7 +19,7 @@ export class VeteranProfileComponent implements OnInit {
   name: any;
   selectedGender: any = null;
   selectedMartialStatus: any = null;
-  @email()
+
   emailId!: string;
 
   genders: any[] = [{ name: 'Female', key: 'A' }, { name: 'Male', key: 'M' }];
@@ -43,7 +42,10 @@ export class VeteranProfileComponent implements OnInit {
     this.selectedGender = this.genders[1];
     this.selectedMartialStatus = this.martialStatuses[1];
     let response = this.service.getVeteranProfileDetailsByRecordNumber();
-    response.subscribe((data) => this.veteran = data)
+    response.subscribe((data) =>
+    { this.veteran = data
+      console.log(this.veteran.lastName)
+    })
   }
 
   buildForm() {
@@ -55,7 +57,7 @@ export class VeteranProfileComponent implements OnInit {
       veteranId: ['', Validators.required],
       firstName: ['', Validators.required, Validators.minLength(4)],
       middleName: [''],
-      lastName: [null, Validators.required, Validators.minLength(4)],
+      lastName: ['', Validators.required, Validators.minLength(4)],
       cfirstName: ['', Validators.required, Validators.minLength(4)],
       cmiddleName: [''],
       clastName: ['', Validators.required, Validators.minLength(4)],
@@ -70,18 +72,18 @@ export class VeteranProfileComponent implements OnInit {
       zipCode: [null, Validators.required],
       DOB: ['', Validators.required],
       POB: ['', Validators.required],
-      SSNNumber: ['', RxwebValidators.mask({ mask: '999-99-9999' })],
+      SSNNumber: [''],
       hmisIdNo: ['', Validators.required],
       emailId: [null,Validators.required,Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')],
       veteranSupports: ['', Validators.required],
-      phoneNumber: ['', RxwebValidators.mask({ mask: '(999) 999-9999' })],
+      phoneNumber: [''],
       primaryLanguage: ['', Validators.required],
       relegiousPreferences: ['', Validators.required],
       hobbies: ['', Validators.required],
       cStreet: ['', Validators.required],
       cCity: ['', Validators.required],
       cState: ['', Validators.required],
-      cZip: ['', RxwebValidators.mask({ mask: '99999-9999' })],
+      cZip: [''],
       cHouseNumber: ['', Validators.required],
       race: ['', Validators.required],
       contactPersonRelationship: ['', Validators.required],

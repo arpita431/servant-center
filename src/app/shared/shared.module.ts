@@ -42,6 +42,7 @@ FullCalendarModule.registerPlugins([
   timeGridPlugin,
   interactionPlugin,
 ]);
+
 const MODULES = [
   InputTextModule,
   ButtonModule,
@@ -67,8 +68,8 @@ const MODULES = [
   DialogModule,
   Ng2SearchPipeModule,
   HttpClientModule,
+  
 ];
-
 const COMPONENTS = [
   ItemHeaderComponent,
   HeaderComponent,

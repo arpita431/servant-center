@@ -1,5 +1,6 @@
 <div class="p-grid">
   <div class="p-col-12">
+   
     <app-item-header title="Veteran Profile"></app-item-header>
     <div class="form-container">
       <form [formGroup]="veteranProfileForm" (ngSubmit)="onSubmit()">
@@ -88,7 +89,7 @@
           <div class="p-field p-col-12 p-md-3">
             <input
               type="text"
-              value="{{ veteran?.lastName }}"
+
               pInputText
               formControlName="lastName"
               placeholder="Last Name"
@@ -274,7 +275,9 @@
               class="form-control"
               pInputText
               placeholder="Phone Number"
+              mask="000-000" prefix="+1" 
             />
+            
           </div>
           <div class="p-field p-col-12 p-md-3">
             <input
