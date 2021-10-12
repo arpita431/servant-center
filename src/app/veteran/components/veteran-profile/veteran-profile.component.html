@@ -75,7 +75,7 @@
               <input
                 id="First Name"
                 type="text"
-                value="{{ veteran?.firstName }}"
+              
                 pInputText
                 formControlName="firstName"
               />
@@ -196,12 +196,11 @@
               <span class="p-float-label">
               <input
               id="Email Id"
-                type="email"
+                type="text"
                 formControlName="emailId"
                 class="form-control"
                 pInputText
-             mask="SA*@A*.SSS"
-             [showMaskTyped]="true" 
+             mask="SA*@AA*.SS||SA*@AA*.SSS" 
               />
               <label for="Email Id">Email Id</label>
             </span>
@@ -251,7 +250,7 @@
                 type="text"
                 pInputText
                 formControlName="SSNNumber"
-              mask ="000-000"
+                mask="000-00-0000" 
               />
               <label for="SSN #">SSN #</label>
             </span>
@@ -473,7 +472,8 @@
                 type="text"
                 pInputText
                 formControlName="zipCode"
-                placeholder="Zip Code"
+                placeholder="Zip Code"  
+                mask="00000-0000||00000"  
               />
               <div
                 *ngIf="
@@ -643,8 +643,7 @@
                 pInputText
                 formControlName="cZip"
                 placeholder="Zip"
-                mask= "99999-9999"
-                [showMaskTyped]="true"
+                mask="00000-0000||00000" 
               />
             </div>
           </div>

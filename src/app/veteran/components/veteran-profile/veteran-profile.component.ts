@@ -21,8 +21,42 @@ export class VeteranProfileComponent implements OnInit {
   name: any;
   selectedGender: any = null;
   selectedMartialStatus: any = null;
+userName:any;
+dob:any;
+recordNo: any;
+intakeDob: any;
+caseManager: any;
+veteranId: any;
+firstName: any;
+middleName: any;
+lastName: any;
+nickName: any;
+pob: any;
+emailId: any;
+phoneNumber: any;
+contactPersonFirstName: any;
+contactPersonMiddleName: any;
+contactPersonLastName: any;
+address1: any;
+address2: any;
+country: any;
+city: any;
+state: any;
+gender: any;
+zipCode: any;
+martialStatus: any;
+ssnNumber: any;
+hmisIdNo: any;
+primaryLanguage: any;
+relegiousPreferences: any;
+hobbies: any;
+contactPersonCity: any;
+contactPersonState: any;
+contactPersonZip: any;
+contactPersonHouseNumber: any;
+contactPersonRelationship: any;
+race: any;
 
-  emailId!: string;
   public customPatterns = { '0': { pattern: new RegExp('\[a-zA-Z\]')} };
   genders: any[] = [{ name: 'Female', key: 'A' }, { name: 'Male', key: 'M' }];
   martialStatuses: any[] = [{ name: 'Single', key: 'S' }, { name: 'Married', key: 'M' }];
@@ -83,25 +117,67 @@ export class VeteranProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.buildForm();
+    
     console.log(this.name);
     this.selectedGender = this.genders[1];
     this.selectedMartialStatus = this.martialStatuses[1];
     let response = this.service.getVeteranProfileDetailsByRecordNumber();
-    response.subscribe((data) => this.veteran = data)
+    response.subscribe((data) => {
+      this.veteran = data;
+      this.recordNo = this.veteran.recordNo;
+      this.userName = this.veteran.firstName;
+      this.dob = this.veteran.dob;
+      this.intakeDob = this.veteran.intakeDOB;
+      this.intakeDob = this.veteran.intakeDOB;
+      this.caseManager = this.veteran.caseManager;
+      this.veteranId = this.veteran.veteranId;
+      this.firstName = this.veteran.firstName;
+      this.middleName = this.veteran.middleName;
+      this.lastName = this.veteran.lastName;
+      this.nickName = this.veteran.nickName;
+      this.dob = this.veteran.dob;
+      this.pob = this.veteran.pob;
+      this.emailId = this.veteran.emailId;
+      this.phoneNumber = this.veteran.phoneNumber;
+      this.contactPersonFirstName = this.veteran.contactPersonFirstName;
+      this.contactPersonMiddleName = this.veteran.contactPersonMiddleName;
+      this.contactPersonLastName = this.veteran.contactPersonLastName;
+      this.address1 = this.veteran.address1;
+      this.address2 = this.veteran.address1;
+      this.country = this.veteran.country;
+      this.city = this.veteran.city;
+      this.state = this.veteran.state;
+      this.gender = this.veteran.gender;
+      this.zipCode = this.veteran.zipCode;
+      this.martialStatus = this.veteran.martialStatus;
+      this.ssnNumber = this.veteran.ssnNumber;
+      this.hmisIdNo = this.veteran.hmisIdNo;
+      this.primaryLanguage = this.veteran.primaryLanguage;
+      this.relegiousPreferences = this.veteran.relegiousPreferences;
+      this.hobbies = this.veteran.hobbies;
+      this.contactPersonCity = this.veteran.contactPersonCity;
+      this.contactPersonState = this.veteran.contactPersonState;
+      this.contactPersonZip = this.veteran.contactPersonZip;
+      this.contactPersonHouseNumber = this.veteran.contactPersonHouseNumber;
+      this.contactPersonRelationship = this.veteran.contactPersonRelationship;
+      this.race = this.veteran.race;
+      this.buildForm();
+      console.log(this.veteranProfileForm.value);
+    })
+
     console.log(response);
   }
 
   buildForm() {
     this.veteranProfileForm = this.formBuilder.group({
-      recordNo: [''],
-      intakeDOB: [null],
-      caseManager: [null, Validators.required],
-      country: [null, Validators.required],
-      veteranId: ['', Validators.required],
-      firstName: ['', Validators.required, Validators.minLength(4),Validators.nullValidator],
-      middleName: [''],
-      lastName: ['', Validators.required, Validators.minLength(4)],
+      recordNo: [this.recordNo],
+      intakeDOB: [this.intakeDob],
+      caseManager: [this.caseManager, Validators.required],
+      country: [this.country, Validators.required],
+      veteranId: [this.veteranId, Validators.required],
+      firstName: [this.userName, [Validators.required, Validators.minLength(4),Validators.nullValidator]],
+      middleName: [this.middleName],
+      lastName: [this.lastName, [Validators.required, Validators.minLength(4)]],
       cfirstName: ['', Validators.required, Validators.minLength(4)],
       cmiddleName: [''],
       clastName: ['', Validators.required, Validators.minLength(4)],
@@ -114,7 +190,7 @@ export class VeteranProfileComponent implements OnInit {
       selectedGender: ['', Validators.required],
       selectedMartialStatus: ['', Validators.required],
       zipCode: [null, Validators.required],
-      DOB: ['', Validators.required],
+      DOB: [this.dob, Validators.required],
       POB: ['', Validators.required],
       SSNNumber: [''],
       hmisIdNo: ['', Validators.required],
