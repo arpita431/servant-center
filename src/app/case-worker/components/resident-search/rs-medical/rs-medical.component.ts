@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rs-medical.component.scss'],
 })
 export class RsMedicalComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+  constructor() { }
+
+  ngOnInit(): void {
+    console.log('rs medical component');
+  }
+
 }

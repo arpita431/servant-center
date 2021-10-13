@@ -8,5 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class RsTreatmentPlanComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+
+
+  ngOnInit(): void {
+    console.log('rs treatment plan component');
+  }
+
 }

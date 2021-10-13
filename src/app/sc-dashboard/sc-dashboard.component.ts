@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sc-dashboard.component.scss'],
 })
 export class ScDashboardComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+  constructor() { }
+
+  ngOnInit(): void {
+    console.log('sc dashboard component');
+  }
+
 }

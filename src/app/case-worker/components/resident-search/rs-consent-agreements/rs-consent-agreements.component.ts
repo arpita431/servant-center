@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rs-consent-agreements.component.scss'],
 })
 export class RsConsentAgreementsComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+
+  constructor() { }
+
+  ngOnInit(): void {
+    console.log('rs consent agreements component');
+  }
+
 }

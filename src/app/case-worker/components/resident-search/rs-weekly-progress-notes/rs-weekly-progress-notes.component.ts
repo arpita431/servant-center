@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rs-weekly-progress-notes.component.scss'],
 })
 export class RsWeeklyProgressNotesComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+  constructor() { }
+
+  ngOnInit(): void {
+    console.log('rs weekly progress component');
+  }
+
 }
