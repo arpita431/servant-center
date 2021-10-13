@@ -5,6 +5,7 @@
     class="p-col-12 p-lg-2"
     width="250px"
     [hidden]="!displayMenu"
+    (click) = "activeMenu($event)"
   ></p-menu>
 
   <p-divider

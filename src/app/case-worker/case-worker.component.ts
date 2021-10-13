@@ -83,4 +83,8 @@ export class CaseWorkerComponent implements OnInit {
   toggleMenu(): void {
     this.displayMenu = !this.displayMenu;
   }
+  activeMenu(event:any) {
+   if(window.innerWidth <768)
+    this.displayMenu = !this.displayMenu;
+  }
 }
