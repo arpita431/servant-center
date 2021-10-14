@@ -317,6 +317,18 @@
               />
               <label for="Phone Number">Phone Number</label>
             </span>
+            <small
+            class="error"
+            *ngIf="  getControl.phoneNumber.touched && getControl.phoneNumber.errors?.required"
+          >
+            zipCode is required.
+          </small>
+          <small
+            class="error"
+            *ngIf=" getControl.phoneNumber.touched && getControl.phoneNumber.invalid && !getControl.phoneNumber.errors?.required"
+          >
+         ZipCode is invalid.
+          </small>
             </div>
           </div>
           
@@ -559,25 +571,19 @@
                 placeholder="Zip Code"
                 mask="00000-0000||00000"
               />
-              <div
-                *ngIf="
-                  getControl.zipCode.touched && getControl.lastName.invalid
-                "
-                class="text-danger"
-              >
+            
                 <small
                   class="error"
-                  *ngIf="getControl.zipCode.errors?.required"
+                  *ngIf="  getControl.zipCode.touched && getControl.zipCode.errors?.required"
                 >
                   zipCode is required.
                 </small>
                 <small
                   class="error"
-                  *ngIf="getControl.zipCode.errors?.minlength"
+                  *ngIf=" getControl.zipCode.touched && getControl.zipCode.invalid && !getControl.zipCode.errors?.required"
                 >
-                  Minimum 4 character are required.
-                </small>
-              </div>
+               ZipCode is invalid.
+                </small>             
             </div>
           </div>
         </fieldset>

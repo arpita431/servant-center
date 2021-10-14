@@ -150,7 +150,7 @@ export class VeteranProfileComponent implements OnInit {
         [Validators.required,
         Validators.pattern('/^[a-z]+[a-z0-9._]+@[a-z]+/.[a-z.]{2,5}$/'),
       ]],
-      phoneNumber: [this.phoneNumber],
+      phoneNumber: [this.phoneNumber, Validators.required],
 
       cfirstName: [
         this.contactPersonFirstName,

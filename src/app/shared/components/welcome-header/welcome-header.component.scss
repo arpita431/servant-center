@@ -42,9 +42,10 @@
 }
 
 .last-login {
+  font-family: "Roboto";
   padding-top: 20px;
   font-style: italic;
-  font-weight: lighter;
+  font-weight: 400;
 }
 
 ::ng-deep .p-tooltip .p-tooltip-text {
