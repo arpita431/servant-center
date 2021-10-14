@@ -8,11 +8,9 @@
     (click) = "activeMenu($event)"
   ></p-menu>
 
-  <p-divider
-    layout="vertical"
-    class="p-d-none p-d-lg-block p-col-fixed"
-    width="10px"
-  ></p-divider>
+  <p-menu [model]=items class="p-col-12 p-lg-2" width="250px" [hidden]="!displayMenu" (click) = "activeMenu($event)"></p-menu>
+
+  <p-divider layout="vertical" class="p-d-none p-d-lg-block p-col-fixed" width="10px"></p-divider>
 
   <div class="p-col">
     <app-welcome-header

@@ -67,10 +67,8 @@
   .header {
     display: block;
   }
-
   .header-sub {
     width: 600px;
-
     margin-left: 100px;
   }
 }
@@ -78,7 +76,6 @@
 @media only screen and (max-width: 600px) {
   .header-sub {
     width: 400px;
-
     margin-left: 70px;
   }
 }
