@@ -22,7 +22,12 @@
                   pInputText
                   placeholder="Goal Title"
                   class="inputFromUser"
+<<<<<<< HEAD
            
+=======
+                  appNoSpecialSymbols
+                  customAttr="startWithAlpha"
+>>>>>>> b7af534a36eb3882510eba5eb127fab2f61ceeb4
                 />
                 <small
                   class="error"
@@ -30,15 +35,27 @@
                   >Goal Title is required.</small
                 >
                 <small
+<<<<<<< HEAD
+=======
+                class="error"
+                *ngIf="goalTitle.errors?.maxlength"
+                >Goal Title should be at max of 50 characters.</small
+              >
+                <!-- <small
+>>>>>>> b7af534a36eb3882510eba5eb127fab2f61ceeb4
                   class="error"
                   *ngIf="goalTitle.errors?.pattern"
                   >Goal Title should always start with alphabet.</small
                 >
+<<<<<<< HEAD
                 <small
                 class="error"
                 *ngIf="goalTitle.errors?.maxlength"
                 >Goal Title should be at max of 30 characters.</small
               >
+=======
+                 -->
+>>>>>>> b7af534a36eb3882510eba5eb127fab2f61ceeb4
               </div>
               <div class="p-field p-col-12 p-sm-12">
                 <textarea
@@ -56,7 +73,11 @@
                 <small
                 class="error"
                 *ngIf="goalDescription.errors?.maxlength"
+<<<<<<< HEAD
                 >Goal Description should be at max of 50 characters</small
+=======
+                >Goal Description should be at max of 300 characters</small
+>>>>>>> b7af534a36eb3882510eba5eb127fab2f61ceeb4
               >
               </div>
               <div class="p-field p-col-12 p-sm-12">
@@ -136,7 +157,11 @@
                 pButton
                 icon="fas fa-plus-circle"
                 label="Add Notes"
+<<<<<<< HEAD
                 class="p-button-outlined p-ml-2 p-mt-1 addNotesButton"
+=======
+                class="p-button-outlined addNotesButton"
+>>>>>>> b7af534a36eb3882510eba5eb127fab2f61ceeb4
                 (click)="showDialog()"
               ></button>
             </div>
@@ -146,7 +171,7 @@
                 [(ngModel)]="searchText"
                 pInputText
                 placeholder="Search"
-                class="p-mr-2 p-mt-1 search-dialog"
+                class="search-dialog"
               />
             </div>
           </p-toolbar>
