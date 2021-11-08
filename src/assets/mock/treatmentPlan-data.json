@@ -1,0 +1,12 @@
+{
+    "fname":"Arpita",
+    "lname":"Maurya",
+    "recNo":"233",
+    "dob1":"07/29/2000",
+    "dob2":"08/23/2000",
+    "intakeDate":"10/23/2021",
+    "hmisId":"123456",
+    "diagnoses":"This is the diagnoses",
+    "support":"support text from the backend",
+    "strength":"strength text from the backend"
+}
