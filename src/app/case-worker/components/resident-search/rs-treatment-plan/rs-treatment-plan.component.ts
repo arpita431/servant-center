@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataService } from 'src/app/case-worker/services/data.service';
 @Component({
   selector: 'app-rs-treatment-plan',
   templateUrl: './rs-treatment-plan.component.html',
@@ -12,9 +13,27 @@ export class RsTreatmentPlanComponent implements OnInit {
   treatmentGoals: any;
   issuesArray: any = [];
   delete: boolean = true;
-  error:boolean = false;
-
-  constructor(private formBuilder: FormBuilder) {}
+  public error:boolean = false;
+  public maxDateValue:any;
+  public eventId:any;
+  public data:any;
+  constructor(private formBuilder: FormBuilder, private service:DataService) {
+    this.service.getTreatmentPlanData().subscribe((res)=>
+    {
+      this.data=res;
+      this.treatmentPlanForm.patchValue({
+        firstName:this.data.fname,
+        lastName:this.data.lname,
+        recordNo: this.data.recNo,
+        dateOfBirth1:this.data.dob1,
+        dateOfBirth2:this.data.dob2,
+        intakeDOB:this.data.intakeDate,
+        hmisIdNo:this.data.hmisId,
+        
+      })
+    })
+    this.maxDateValue = new Date(new Date().getTime());
+  }
 
   ngOnInit(): void {
     this.buildForm();
@@ -86,13 +105,14 @@ export class RsTreatmentPlanComponent implements OnInit {
   getIssues(): FormGroup {
     return this.formBuilder.group({
       goals: ['', Validators.required],
-      plans: [null, Validators.required],
-      strategies: [null, Validators.required],
+      plans: ['', Validators.required],
+      strategies: ['', Validators.required],
       targetDate: [null,Validators.required],
     });
   }
 
   get physicalHealth(): FormArray {
+    
     return this.treatmentIssuesForm.get('physicalHealth') as FormArray;
   }
 
@@ -123,22 +143,43 @@ export class RsTreatmentPlanComponent implements OnInit {
   get getControl() {
     return this.treatmentPlanForm.controls;
   }
-  get subControl()
+ 
+  resetForm()
   {
-   return this.getIssues().controls;
+    this.buildForm();
   }
-  val(event:any)
-  {
-
-    this.error=false;
+validate(event:any)
+{
+    let cl= event.target.id;
+    let k=  document.querySelector(`.${cl}`);
     if(event.target.value==='')
     {
-    this.error=true;
+      
+      k?.classList.remove('dis-none');
     }
-    else
-    {
-      this.error=false;
+    else{
+      k?.classList.add('dis-none');
     }
-  }
+}
+getDate(event:any)
+{
+this.eventId= event.target.id;
 
+this.val(null);
+}
+val(event:any)
+{
+
+ let k=  document.querySelector(`.${this.eventId}`);
+
+ if(event==='' || event===null)
+ {
+   
+   k?.classList.remove('dis-none');
+ }
+ else{
+
+   k?.classList.add('dis-none');
+ }
+}
 }
