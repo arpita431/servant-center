@@ -27,7 +27,6 @@ import { StepsModule } from 'primeng/steps';
 import { TableModule } from 'primeng/table';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { TabViewModule } from 'primeng/tabview';
-import { NgxMaskModule, IConfig } from 'ngx-mask'
 @NgModule({
   declarations: [
     CaseWorkerComponent,
@@ -59,8 +58,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask'
     StepsModule,
     TableModule,
     TabMenuModule,
-    TabViewModule,
-    NgxMaskModule.forRoot()
+    TabViewModule
   ],
   exports: [CardModule, RadioButtonModule, StepsModule, TableModule,TabMenuModule,TabViewModule],
 })

@@ -8,6 +8,7 @@ import { ConsentService } from '../../consent.service';
 })
 export class ConsentDataComponent implements OnInit {
   display: boolean = false;
+  display_two: boolean = false;
   vetran: any;
 
   constructor(private service: ConsentService) {}
@@ -19,6 +20,10 @@ export class ConsentDataComponent implements OnInit {
 
   showConsentForm() {
     this.display = true;
+  }
+
+  showDialog() {
+    this.display_two = true;
   }
 
   getVetranDetailsById() {

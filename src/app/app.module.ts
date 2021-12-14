@@ -23,7 +23,7 @@ import { VeteranModule } from './veteran/veteran.module';
     ButtonModule,
     HttpClientModule,
     VeteranModule,
-    CaseWorkerModule,
+    CaseWorkerModule
   ],
   providers: [],
   bootstrap: [AppComponent],
